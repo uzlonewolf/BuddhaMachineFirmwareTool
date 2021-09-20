@@ -1,14 +1,15 @@
 # Buddha Machine Firmware Tool
 
-A tool for decoding and re-encoding Buddha Machine flash images. Based on work by Malvineous and Hjalfi at
+A tool for decoding and re-encoding Buddha Machine flash images. Based on work by Malvineous, Hjalfi, and Spritetm at
 https://old.reddit.com/r/BigCliveDotCom/comments/pmt390/buddha_machine_teardown_with_flash_dump/ as well as
 work by AlexGuo1998 and Prehistoricman at https://youtu.be/LNpbvyLIvN0 .
 
 Right now it only extracts the binary code loaded into the 8051 microcontroller.  The audio files themselves
-use an unknown encoding that has not been figured out yet.
+use an unknown encoding which has not been figured out yet.
 
-The extracted firmware can be found in the [firmware/](firmware/) directory.  The disassembled files were generated with
-`mame`'s unidasm tool:
+The extracted firmware can be found in the [firmware/](firmware/) directory.  The code.app file parts loaded into
+address 0x2200 also include the first file part which is loaded into address 0x1900 in order to make code inspection
+easier.  The disassembled files were generated with `mame`'s unidasm tool:
 
     unidasm fileparts.00.code.app.part-14.bin -arch axc51core >fileparts.00.code.app.part-14.bin.asm
 
