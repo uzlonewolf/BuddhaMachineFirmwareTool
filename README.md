@@ -9,6 +9,7 @@ use an unknown encoding that has not been figured out yet.
 
 The extracted firmware can be found in the firmware/ directory.  The disassembled files were generated with
 `mame`'s unidasm tool:
+
     unidasm fileparts.00.code.app.part-14.bin -arch axc51core >fileparts.00.code.app.part-14.bin.asm
 
 To extract everything, simply run:
